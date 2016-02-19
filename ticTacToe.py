@@ -3,7 +3,31 @@ def printBoard(board):
     # Write code in this function that prints the game board.               #
     # The code in this function should only print, the user should NOT      #
     # interact with this function in any way.                               #
-    #                                                                       #
+    
+theboard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+theboard
+{'top-L': ' ', 'low-L': ' ', 'top-R': ' ', 'low-M': ' ', 'top-M': ' ', 'mid-M': ' ', 'mid-L': ' ', 'low-R': ' ', 'mid-R': ' '}
+import pprint
+pprint.pprint(theboard)
+{'low-L': ' ',
+ 'low-M': ' ',
+ 'low-R': ' ',
+ 'mid-L': ' ',
+ 'mid-M': ' ',
+ 'mid-R': ' ',
+ 'top-L': ' ',
+ 'top-M': ' ',
+ 'top-R': ' '}
+def printboard(board):
+    print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
+    print('-----')
+    print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
+    print('-----')
+    print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
+	
+printboard(theboard)
+ #tic tac toe board is printed
+ 
     # Hint: you can follow the same process that was done in the textbook.  #
     #########################################################################
 
@@ -26,23 +50,23 @@ def startGame(startingPlayer, board):
     # is happening. You do not need to modify any of the Python code        #
     #########################################################################
 
-    turn = startingPlayer
-    for i in range(9):
-        printBoard(board)
-        print('Turn for ' + turn + '. Move on which space?')
-        move = input()
-        board[move] = turn
-        if( checkWinner(board, 'X') ):
-            print('X wins!')
-            break
-        elif ( checkWinner(board, 'O') ):
-            print('O wins!')
-            break
+    turn = startingPlayer #assigns "turn" to each starting player's turn
+    for i in range(9): #we use for loop for a block of code up to 9 times
+        printBoard(board) #tic tac toe blank board will be printed
+        print('Turn for ' + turn + '. Move on which space?') #gets active player's move and prints Turn for X. (Or prints Turn for O). Move on which space? o
+        move = input() #user input will update the board.
+        board[move] = turn #swaps active player
+        if( checkWinner(board, 'X') ): #checks the board if X won
+            print('X wins!') #if X wins, prints: X wins!
+            break #terminates current loop checking for X winner
+        elif ( checkWinner(board, 'O') ): #checks the board if O won
+            print('O wins!') #if O wins, prints: O wins!
+            break #terminates current loop checking for O winner
     
-        if turn == 'X':
-            turn = 'O'
-        else:
-            turn = 'X'
+        if turn == 'X': #if it's X's turn, 
+            turn = 'O' #change turn to O
+        else: #or else, 
+            turn = 'X' #change turn to X
         
     printBoard(board)
     
