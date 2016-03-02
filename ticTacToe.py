@@ -30,7 +30,10 @@ printboard(theboard)
  
     # Hint: you can follow the same process that was done in the textbook.  #
     #########################################################################
-
+theboard = {'top-L': 'x', 'top-M': 'x', 'top-R': 'x', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+theboard
+import pprint
+pprint.pprint(theboard)
 def checkWinner(board, player):    
     print('Checking if ' + player + ' is a winner...')
     
@@ -43,6 +46,8 @@ def checkWinner(board, player):
     # if the player in the variable 'player' has not won.                   #
     #########################################################################
     
+    if board['top-L'] == board['top-M'] == board['top-R'] == player:
+	return true
     
 def startGame(startingPlayer, board):
     # TO DO #################################################################
