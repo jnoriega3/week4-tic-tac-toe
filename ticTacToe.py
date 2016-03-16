@@ -3,7 +3,8 @@ def printBoard(board):
     # Write code in this function that prints the game board.               #
     # The code in this function should only print, the user should NOT      #
     # interact with this function in any way.                               #
-    
+        # Hint: you can follow the same process that was done in the textbook.  #
+    #########################################################################
 theboard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
 theboard
 {'top-L': ' ', 'low-L': ' ', 'top-R': ' ', 'low-M': ' ', 'top-M': ' ', 'mid-M': ' ', 'mid-L': ' ', 'low-R': ' ', 'mid-R': ' '}
@@ -28,15 +29,7 @@ def printboard(board):
 printboard(theboard)
  #tic tac toe board is printed
  
-    # Hint: you can follow the same process that was done in the textbook.  #
-    #########################################################################
-theboard = {'top-L': 'x', 'top-M': 'x', 'top-R': 'x', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
-theboard
-import pprint
-pprint.pprint(theboard)
-def checkWinner(board, player):    
-    print('Checking if ' + player + ' is a winner...')
-    
+
     # TO DO #################################################################
     # Write code in this function that checks the tic-tac-toe board          #
     # to determine if the player stored in variable 'player' currently      #
@@ -46,8 +39,42 @@ def checkWinner(board, player):
     # if the player in the variable 'player' has not won.                   #
     #########################################################################
     
-    if board['top-L'] == board['top-M'] == board['top-R'] == player:
-	return true
+theboard = {'top-L': 'x', 'top-M': 'x', 'top-R': 'x', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+theboard
+import pprint
+pprint.pprint(theboard)
+
+def checkWinner(board, player):    
+	print('Checking if ' + player + ' is a winner...')
+    
+    #top row across
+	if (board['top-L'] == player) and (board['top-M'] == player) and (board['top-R'] == player):
+		return True
+	#middle row across
+	if (board['mid-L'] == player) and (board['mid-M'] == player) and (board['mid-R'] == player):
+		return True
+	#bottom row across
+	if (board['low-L'] == player) and (board['low-M'] == player) and (board['low-R'] == player):
+		return True
+	#left column down
+	if (board['top-L'] == player) and (board['mid-L'] == player) and (board['low-L'] == player):
+		return True
+	#middle column down
+	if (board['top-M'] == player) and (board['mid-M'] == player) and (board['low-M'] == player):
+		return True
+	#right column down
+	if (board['top-R'] == player) and (board['mid-R'] == player) and (board['low-R'] == player):
+		return True
+	#across
+	if (board['top-L'] == player) and (board['mid-M'] == player) and (board['low-R'] == player):
+		return True
+	#across
+	if (board['top-R'] == player) and (board['mid-M'] == player) and (board['low-L'] == player):
+		return True
+	#notwinner
+	else:
+		return False
+	
     
 def startGame(startingPlayer, board):
     # TO DO #################################################################
