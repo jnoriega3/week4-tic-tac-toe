@@ -5,11 +5,11 @@ def printBoard(board):
     # interact with this function in any way.                               #
         # Hint: you can follow the same process that was done in the textbook.  #
     #########################################################################
-theboard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
-theboard
+board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+board
 {'top-L': ' ', 'low-L': ' ', 'top-R': ' ', 'low-M': ' ', 'top-M': ' ', 'mid-M': ' ', 'mid-L': ' ', 'low-R': ' ', 'mid-R': ' '}
 import pprint
-pprint.pprint(theboard)
+pprint.pprint(board)
 {'low-L': ' ',
  'low-M': ' ',
  'low-R': ' ',
@@ -26,7 +26,7 @@ def printboard(board):
     print('-----')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 	
-printboard(theboard)
+printboard(board)
  #tic tac toe board is printed
  
 
@@ -39,11 +39,6 @@ printboard(theboard)
     # if the player in the variable 'player' has not won.                   #
     #########################################################################
     
-theboard = {'top-L': 'x', 'top-M': 'x', 'top-R': 'x', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
-theboard
-import pprint
-pprint.pprint(theboard)
-
 def checkWinner(board, player):    
 	print('Checking if ' + player + ' is a winner...')
     
