@@ -1,24 +1,3 @@
-def printBoard(board):
-    # TO DO #################################################################
-    # Write code in this function that prints the game board.               #
-    # The code in this function should only print, the user should NOT      #
-    # interact with this function in any way.                               #
-        # Hint: you can follow the same process that was done in the textbook.  #
-    #########################################################################
-board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
-board
-{'top-L': ' ', 'low-L': ' ', 'top-R': ' ', 'low-M': ' ', 'top-M': ' ', 'mid-M': ' ', 'mid-L': ' ', 'low-R': ' ', 'mid-R': ' '}
-import pprint
-pprint.pprint(board)
-{'low-L': ' ',
- 'low-M': ' ',
- 'low-R': ' ',
- 'mid-L': ' ',
- 'mid-M': ' ',
- 'mid-R': ' ',
- 'top-L': ' ',
- 'top-M': ' ',
- 'top-R': ' '}
 def printboard(board):
     print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
     print('-----')
