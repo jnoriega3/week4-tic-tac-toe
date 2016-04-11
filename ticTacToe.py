@@ -74,5 +74,5 @@ def startGame(startingPlayer, board):
         else: #or else, 
             turn = 'X' #change turn to X
         
-    printBoard(board)
+        printBoard(board)
     
